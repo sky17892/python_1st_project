@@ -2,7 +2,6 @@ import pandas as pd
 
 df = pd.read_csv("data/2022_환경_통합v1.csv", encoding="cp949")
 
-# 측정시간 기준으로 자동 start/end 생성
 df["측정시간"] = pd.to_datetime(df["측정시간"])
 
 start = df["측정시간"].min().strftime("%Y%m%d%H00")
