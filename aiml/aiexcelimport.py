@@ -35,7 +35,7 @@ else:
     target_items = ['딸기', '완숙토마토', '파프리카']
     data = data[data['품목'].isin(target_items)]
 
-    features = ['일사량_외부', '누적일사량_외부', '온도_내부', '상대습도_내부', '잔존CO2', '토양온도', '비고']
+    features = ['일사량_외부', '시간별_누적일사량', '누적일사량_외부', '온도_내부', '상대습도_내부', '잔존CO2', '토양온도', '비고']
     target = '품목'
 
     data = data[features + [target]].dropna()
