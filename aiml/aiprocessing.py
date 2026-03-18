@@ -7,10 +7,24 @@ csv_files = glob.glob("data/*.csv")
 dfs = []
 
 for f in excel_files:
-    dfs.append(pd.read_excel(f))
+    try:
+        dfs.append(pd.read_excel(f))
+    except Exception as e:
+        print(f"{f} 읽기 실패: {e}")
 
 for f in csv_files:
-    dfs.append(pd.read_csv(f))
+    try:
+        dfs.append(pd.read_csv(f, encoding='cp949'))
+    except:
+        try:
+            dfs.append(pd.read_csv(f, encoding='utf-8-sig'))
+        except Exception as e:
+            print(f"{f} 읽기 실패: {e}")
+
+#if not dfs:
+#    print("데이터가 없습니다. 폴더와 파일을 확인하세요.")
+#else:
+#    data = pd.concat(dfs, ignore_index=True, encoding='utf-8-sig')
 
 data = pd.concat(dfs, ignore_index=True)
 
@@ -18,7 +32,10 @@ data.columns = data.columns.str.strip()
 
 print("컬럼 확인:", data.columns)
 
-features = ['초장','엽수','엽장','엽폭','줄기굵기']
+target_items = ['딸기','완숙토마토','파프리카']
+data = data[data['품목'].isin(target_items)]
+
+features = ['일사량_외부','누적일사량_외부','온도_내부','상대습도_내부','잔존CO2','토양온도']
 target = '품목'
 
 data = data[features + [target]]
