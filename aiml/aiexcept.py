@@ -1,6 +1,6 @@
 import pandas as pd
 
-file_path = 'data/환경_2020.csv'
+file_path = 'data/환경_2022.csv'
 try:
     df = pd.read_csv(file_path, encoding='cp949')
 except:
@@ -66,6 +66,6 @@ if '시간별_누적일사량' in cols and '누적일사량_외부' in cols:
     cols.insert(cols.index('누적일사량_외부'), cols.pop(cols.index('시간별_누적일사량')))
 df = df[cols]
 
-df.to_csv('data/환경_2020_최종본.csv', index=False, encoding='utf-8-sig')
+df.to_csv('data/환경_2022_최종본.csv', index=False, encoding='utf-8-sig')
 
 print("작업이 완료되었습니다! '시간별_누적일사량' 컬럼이 추가되었습니다.")
