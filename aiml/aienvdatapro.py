@@ -31,7 +31,6 @@ for file_name in env_files:
     for col in [solar_col, in_temp_col, in_hum_col, soil_temp_col, co2_col]:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
-            print("데이터 전처리 되었습니다!")
 
     # --- [전략 1] 일사량: 지역(도+시군) 평균 ---
     if solar_col in df.columns:
