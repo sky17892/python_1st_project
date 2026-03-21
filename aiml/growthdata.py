@@ -4,8 +4,8 @@ from sklearn.metrics import accuracy_score
 from aigrowthdata import X_train, y_train, X_test, y_test
 
 xgb_clf = RandomForestClassifier(
-    n_estimators=200,
-    random_state=42
+    n_estimators=500,
+    random_state=21
 )
 
 xgb_clf.fit(X_train, y_train)
