@@ -23,7 +23,7 @@ for file_name in env_files:
     if not os.path.exists(input_path): continue
     
     # 1. 원본 데이터 로드
-    df = pd.read_csv(input_path, encoding='utf-8-sig')
+    df = pd.read_csv(input_path)
     original_count = len(df)
     
     # 2. 타입 변환 (행 삭제 절대 금지)
@@ -31,6 +31,7 @@ for file_name in env_files:
     for col in [solar_col, in_temp_col, in_hum_col, soil_temp_col, co2_col]:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
+            print("데이터 전처리 되었습니다!")
 
     # --- [전략 1] 일사량: 지역(도+시군) 평균 ---
     if solar_col in df.columns:
@@ -38,6 +39,7 @@ for file_name in env_files:
         solar_means = df.groupby([date_col, '도', '시군'])[solar_col].transform('mean')
         df[solar_col] = df[solar_col].fillna(solar_means)
         df[solar_col] = df[solar_col].round(0).astype('Int64')
+        print("평균값도 유사처리 되었습니다!")
 
     # --- [전략 2] 토양온도: 상관분석 예측 (R² >= 0.4) ---
     if all(c in df.columns for c in [soil_temp_col, in_temp_col, in_hum_col]):
