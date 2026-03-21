@@ -1,13 +1,40 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 
+np.random.seed(42)
+rows = 300
+
 data = pd.DataFrame({
-    "cultivation": [25, 26, 27, 28, 24],
-    "production": [60, 65, 70, 55, 68],
-    "growth": [800, 820, 780, 900, 850],
-    "environment": [12000, 13000, 11000, 15000, 14000],
-    "growth_stage": [0, 1, 1, 2, 0]
+    "cultivation": np.random.randint(20, 35, rows),
+    "production": np.random.randint(55, 70, rows),
+    "growth": np.random.randint(780, 900, rows),
+    "environment": np.random.randint(10000, 17000, rows),
+    "growth_stage": np.random.randint(0, 2, rows)
 })
+
+def make_target(row):
+    score = 0
+
+    if row['cultivation'] > 27:
+        score += 1
+    if row['production'] > 70:
+        score += 1
+    if row['growth'] > 850:
+        score += 1
+    if row['environment'] > 13000:
+        score += 1
+
+    if score <= 2:
+        return 0
+    elif score == 3:
+        return 1
+    else:
+        return 2
+
+
+data['growth_stage'] = data.apply(make_target, axis=1)
+
 features = ['cultivation','production','growth','environment']
 target = 'growth_stage'
 
