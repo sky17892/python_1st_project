@@ -2,15 +2,15 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-np.random.seed(42)
-rows = 300
+np.random.seed(112)
+rows = 102
 
 data = pd.DataFrame({
-    "cultivation": np.random.randint(20, 35, rows),
-    "production": np.random.randint(55, 70, rows),
-    "growth": np.random.randint(780, 900, rows),
-    "environment": np.random.randint(10000, 17000, rows),
-    "growth_stage": np.random.randint(0, 2, rows)
+    "cultivation": np.random.randint(20, 30, rows),
+    "production": np.random.randint(55, 65, rows),
+    "growth": np.random.randint(780, 1000, rows),
+    "environment": np.random.randint(8000, 18000, rows),
+    "growth_stage": np.random.randint(0, 3, rows)
 })
 
 def make_target(row):
@@ -44,8 +44,8 @@ y = data[target]
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
-    test_size=0.4,
-    random_state=42
+    test_size=0.1,
+    random_state=112
 )
 
 print("X_train")
