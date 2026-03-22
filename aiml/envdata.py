@@ -5,8 +5,8 @@ import numpy as np
 from aienvdata import X_train, y_train, X_test, y_test
 
 xgb_reg = RandomForestRegressor(
-    n_estimators=300,
-    random_state=21
+    n_estimators=500,
+    random_state=42
 )
 
 xgb_reg.fit(X_train, y_train)
