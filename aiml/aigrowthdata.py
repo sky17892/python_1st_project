@@ -3,9 +3,6 @@ import glob
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-# ==============================
-# 출력 설정
-# ==============================
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 1000)
