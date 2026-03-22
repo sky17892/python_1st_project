@@ -54,10 +54,10 @@ print("\n총 데이터 수:", len(data))
 def make_reg_target(row):
     # 가중합 방식 (연속값)
     return (
-        row['온도_내부'] * 0.3 +
+        row['온도_내부'] * 0.2 +
         row['상대습도_내부'] * 0.2 +
-        row['일사량_외부'] * 0.3 +
-        row['토양온도'] * 0.2
+        row['일사량_외부'] * 0.2 +
+        row['토양온도'] * 0.1
     )
 
 data['growth_score'] = data.apply(make_reg_target, axis=1)
