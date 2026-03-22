@@ -5,10 +5,8 @@ import numpy as np
 from aienvdata import X_train, y_train, X_test, y_test
 
 xgb_reg = RandomForestRegressor(
-    n_estimators=500,
-    max_depth=10,
-    random_state=21,
-    n_jobs=-1
+    n_estimators=300,
+    random_state=21
 )
 
 xgb_reg.fit(X_train, y_train)
@@ -19,7 +17,7 @@ rmse = np.sqrt(mean_squared_error(y_test, pred))
 r2 = r2_score(y_test, pred)
 
 print("🔥 RMSE:", rmse)
-print("🔥 R2 Score:", r2)
+print("RandomForest regressor 정확도:", r2)
 
 print("\n실제 vs 예측")
 for real, p in list(zip(y_test[:10], pred[:10])):
