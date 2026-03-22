@@ -62,7 +62,7 @@ def make_reg_target(row):
 
 data['growth_score'] = data.apply(make_reg_target, axis=1)
 
-noise_ratio = 0.7
+noise_ratio = 0.2
 
 noise_idx = np.random.choice(
     data.index,
@@ -78,7 +78,7 @@ y = data['growth_score']
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
-    test_size=0.4,
+    test_size=0.2,
     random_state=42
 )
 
