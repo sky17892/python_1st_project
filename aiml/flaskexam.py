@@ -4,4 +4,3 @@ app = Flask(__name__)
 @app.route("/")
 def gp_plz():
     return "flask sucandfall!"
-
