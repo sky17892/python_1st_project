@@ -1,4 +1,4 @@
-from flaskexams import db
+from aismartfarm import db
 
 class FarmInfo(db.Model):
     __tablename__ = 'farm_info'
