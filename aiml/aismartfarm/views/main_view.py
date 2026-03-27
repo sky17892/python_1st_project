@@ -13,4 +13,3 @@ def index():
 @bp.route('/main')
 def hello_flask():
     return "hello, flask"
-
