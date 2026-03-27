@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17b0e58a-96d7-4235-be78-70319f20bf90" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/data/환경_2022_최종본.csv" beforeDir="false" />
-    </list>
+    <list default="true" id="17b0e58a-96d7-4235-be78-70319f20bf90" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +116,7 @@
       <workItem from="1774509773188" duration="3481000" />
       <workItem from="1774571083578" duration="8008000" />
       <workItem from="1774580109791" duration="76000" />
-      <workItem from="1774580189438" duration="1467000" />
+      <workItem from="1774580189438" duration="1782000" />
     </task>
     <servers />
   </component>
