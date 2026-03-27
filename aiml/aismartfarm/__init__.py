@@ -6,14 +6,28 @@ import config
 db = SQLAlchemy()
 migrate = Migrate()
 
-def index():
+#def index():
+#    app = Flask(__name__)
+#    app.config.from_object(config)
+
+#    db.init_app(app)
+#    migrate.init_app(app, db)
+
+#    from .views import main_view
+#    from . import models
+#    app.register_blueprint(main_view.bp)
+#    return app
+
+def create_app():
     app = Flask(__name__)
     app.config.from_object(config)
+    from .import models
 
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app,db)
 
     from .views import main_view
-    from . import models
     app.register_blueprint(main_view.bp)
+    #app.register_blueprint(question_views.bp)
+    #app.register_blueprint(answer_views.bp)
     return app
