@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
-    <title>navigationbar</title>
+    <title>파프리카 재배 스마트팜 헤더</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
+    <script href="{{url_for('static', filename='script.js')}}" crossorigin="anonymous"></script>
+    <script src="https://www.figma.com/webpack-artifacts/assets/code_components_preview_iframe-62f6d3c6ad9efdf0.min.js.br" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.min.css')}}">
+    <style id="reset-css">
+     @layer figreset,figoverridable,reset,theme,base,figutils,components,utilities;@layer figoverridable{:root{font-synthesis:none}}@layer figutils{:root{--banner-height:48px;--banner-height-v2:40px;--full-height-with-banner:calc(100dvh - var(--banner-height))}@media (max-width:600px){.banner-v2-container{left:0 !important;right:0 !important;margin:0 auto !important}}.wrapper-with-banner .min-h-screen{min-height:var(--full-height-with-banner)}.wrapper-with-banner .h-screen{height:var(--full-height-with-banner)}}
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <a class="navbar-brand" href="{{ url_for('main.index') }}">Bulletin</a>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">계정생성</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">로그인</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<nav class="border-b bg-white sticky top-0 z-50" data-fg-cqpb0="30.76:76.12:/src/app/components/Navbar.tsx:19:5:532:5767:e:nav:etxtx:1" data-fgid-cqpb0=":r4:" data-fg-callsite-dpte1="">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-fg-cqpb1="30.76:76.12:/src/app/components/Navbar.tsx:20:7:592:2780:e:div:e" data-fgid-cqpb1=":r5:">
+					<div class="flex justify-between items-center h-16" data-fg-cqpb2="30.76:76.12:/src/app/components/Navbar.tsx:21:9:657:2702:e:div:xtetxtetxtetxte" data-fgid-cqpb2=":r6:">
+						<a class="flex items-center gap-3" data-fg-cqpb4="30.76:76.12:/src/app/components/Navbar.tsx:23:11:745:396:e:Link:ete:::::B0gV" data-fgid-cqpb4=":r7:" href="/" data-discover="true"><img src="https://t1.daumcdn.net/brunch/service/user/1jpV/image/6h4K6IF-odowiAHdjQqKNk3LLLQ.jpg" alt="파프리카 스마트팜 로고" class="h-10 w-10 rounded-full object-cover" data-fg-cqpb5="30.76:76.12:/src/app/components/Navbar.tsx:24:13:807:231:e:ImageWithFallback::::::BDpS" data-fgid-cqpb5=":r8:" data-fg-csfh3="21.8:21.1153:/src/app/components/figma/ImageWithFallback.tsx:25:5:1051:95:e:img" data-fgid-csfh3=":r9:"><span class="font-bold text-xl text-emerald-600" data-fg-cqpb6="30.76:76.12:/src/app/components/Navbar.tsx:29:13:1051:72:e:span:t" data-fgid-cqpb6=":ra:">파프리카 스마트팜 AI</span></a>
+						<div class="hidden md:flex items-center gap-8" data-fg-cqpb9="30.76:76.12:/src/app/components/Navbar.tsx:33:11:1182:1062:e:div:x" data-fgid-cqpb9=":rb:">
+							<a href="#services" class="text-gray-700 hover:text-emerald-600 transition" data-fg-cqpb19="30.76:76.12:/src/app/components/Navbar.tsx:48:17:1794:123:e:a:t" data-fgid-cqpb19=":rc:">서비스</a><a href="#features" class="text-gray-700 hover:text-emerald-600 transition" data-fg-cqpb21="30.76:76.12:/src/app/components/Navbar.tsx:51:17:1934:122:e:a:t" data-fgid-cqpb21=":rd:">특징</a><a href="#contact" class="text-gray-700 hover:text-emerald-600 transition" data-fg-cqpb23="30.76:76.12:/src/app/components/Navbar.tsx:54:17:2073:121:e:a:t" data-fgid-cqpb23=":re:">문의</a>
+						</div>
+						<div class="hidden md:flex items-center gap-4" data-fg-cqpb26="30.76:76.12:/src/app/components/Navbar.tsx:62:11:2286:734:e:div:x" data-fgid-cqpb26=":rf:">
+							<button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-9 px-4 py-2 has-[&gt;svg]:px-3" data-fg-cqpb36="30.76:76.12:/src/app/components/Navbar.tsx:73:17:2735:107:e:Button:t::::s:BNeg:1" data-fgid-cqpb36=":rg:" data-fg-csem0="21.16:21.2106:/src/app/components/ui/button.tsx:50:5:1941:121:e:Comp::1" data-fgid-csem0=":rh:" data-fg-callsite-cqpb36="">로그인</button><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3" data-fg-cqpb38="30.76:76.12:/src/app/components/Navbar.tsx:76:17:2859:111:e:Button:t::::s:BNeg:1" data-fgid-cqpb38=":ri:" data-fg-csem0="21.16:21.2106:/src/app/components/ui/button.tsx:50:5:1941:121:e:Comp::1" data-fgid-csem0=":rj:" data-fg-callsite-cqpb38="">회원가입</button>
+						</div>
+						<button class="md:hidden" data-fg-cqpb41="30.76:76.12:/src/app/components/Navbar.tsx:84:11:3060:284:e:button:x" data-fgid-cqpb41=":rk:"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6" data-fg-cqpb44="30.76:76.12:/src/app/components/Navbar.tsx:91:15:3281:28:e:Menu::::::D5X5" data-fgid-cqpb44=":rl:"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button>
+					</div>
+				</div>
+				</nav>
 </body>
 </html>
