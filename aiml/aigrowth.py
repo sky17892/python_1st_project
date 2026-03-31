@@ -96,7 +96,6 @@ X = growth_df[[
 
 y = growth_df['growth_stage']
 
-# 👉 확인 (중요)
 print("\n🔥 X 타입 확인:\n", X.dtypes)
 
 X_train, X_test, y_train, y_test = train_test_split(
