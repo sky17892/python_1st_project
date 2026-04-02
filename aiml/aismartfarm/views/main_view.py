@@ -25,3 +25,11 @@ def datana():
 @bp.route('/predict')
 def predict():
     return render_template('main/predict.html')
+
+@bp.route('/login')
+def login():
+    return render_template('main/login.html')
+
+@bp.route('/signup')
+def signup():
+    return render_template('main/signup.html')
