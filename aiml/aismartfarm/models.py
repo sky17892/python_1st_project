@@ -1,4 +1,20 @@
+from datetime import datetime
+from sqlalchemy import Sequence
 from aismartfarm import db
+
+class Member(db.Model):
+    __tablename__ = 'member'
+
+    mem_no = db.Column(
+        db.Integer,
+        Sequence('MEM_NO'),
+        primary_key=True, autoincrement=True
+    )
+    mem_name = db.Column(db.String(50))
+    mem_email = db.Column(db.String(100), unique=True)
+    mem_password = db.Column(db.String(200))
+    mem_phone = db.Column(db.String(20))
+    join_date = db.Column(db.DateTime, default=datetime.utcnow())
 
 class FarmInfo(db.Model):
     __tablename__ = 'farm_info'
