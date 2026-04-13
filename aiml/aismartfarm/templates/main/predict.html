@@ -5311,47 +5311,98 @@
 	</div>
 </div>
 </main>-->
-                <center><main style="display:flex; justify-content:center; padding:40px 0;">
+                <center><main class="flex-1">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div class="space-y-6">
+                            <div>
+                                <h2 class="text-2xl font-semibold text-gray-900">작물 가격 예측 서비스</h2>
+                                <p class="text-gray-600 mt-1">
+                                    도/소매가 분석과 날씨 데이터를 연동하여 정확한 가격을 예측합니다
+                                </p>
+                            </div>
+                        <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border p-6 max-w-6xl mx-auto">
+                          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
 
-                    <div style="width:100%; max-width:600px; text-align:center;">
+                            <div class="flex flex-col">
+                              <label class="text-sm font-medium text-gray-700 mb-2">작물 선택</label>
+                              <button class="w-full flex items-center justify-between rounded-md border px-3 py-2 text-sm">
+                                파프리카
+                              </button>
+                            </div>
 
-                        <h2 style="font-size:24px; font-weight:600;">작물 가격 예측 서비스</h2>
-                        <p style="color:gray; margin-top:8px;">
-                            도/소매가 분석과 날씨 데이터를 연동하여 정확한 가격을 예측합니다
-                        </p>
+                            <div class="flex flex-col">
+                              <label class="text-sm font-medium text-gray-700 mb-2">품종</label>
+                              <button class="w-full flex items-center justify-between rounded-md border px-3 py-2 text-sm">
+                                빨강
+                              </button>
+                            </div>
 
+                            <div class="flex flex-col">
+                              <label class="text-sm font-medium text-gray-700 mb-2">지역</label>
+                              <button class="w-full flex items-center justify-between rounded-md border px-3 py-2 text-sm">
+                                전국
+                              </button>
+                            </div>
+
+                            <div class="flex flex-col">
+                              <label class="text-sm font-medium text-gray-700 mb-2">예측 기간</label>
+                              <button class="w-full flex items-center justify-between rounded-md border px-3 py-2 text-sm">
+                                단기 (5-8일)
+                              </button>
+                            </div>
+
+                              <div class="flex flex-col">
+                              <label class="text-sm font-medium text-gray-700 mb-2">추측 가격 데이터</label>
+                              <button class="w-full flex items-center justify-between rounded-md border px-3 py-2 text-sm">
+                                대략 21,092.72원
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                         {% if result %}
                             <h2 style="margin-top:20px;">예측 가격: {{ result }} 원</h2>
                         {% endif %}
 
                         <form method="POST" style="margin-top:20px;">
                             <div style="margin-bottom:10px;">
-                                <label>날짜(2023.03.23~2023.04.02까지의 가격데이터로 분포)</label><br>
-                                <input type="date" name="date" required style="width:20%; padding:8px;">
-                            </div>
+                            <label>날짜 (2023.03.23 ~ 2023.04.02 가격 데이터)</label><br>
+                            <label>반입량 선택된 날짜</label>
+                            <select name="date" required style="width:20%; padding:8px;">
+                                <option value="">-- 선택하세요 --</option>
+                                <option value="2023-03-23">2023.03.23</option>
+                                <option value="2023-03-24">2023.03.24</option>
+                                <option value="2023-03-25">2023.03.25</option>
+                                <option value="2023-03-26">2023.03.26</option>
+                                <option value="2023-03-27">2023.03.27</option>
+                                <option value="2023-03-28">2023.03.28</option>
+                                <option value="2023-03-29">2023.03.29</option>
+                                <option value="2023-03-30">2023.03.30</option>
+                                <option value="2023-04-01">2023.04.01</option>
+                                <option value="2023-04-02">2023.04.02</option>
+                            </select>
+                        </div>
 
                             <div style="margin-bottom:10px;">
                                 <label>반입량</label><br>
-                                <input type="number" name="volume" step="any" required style="width:20%; padding:8px;">
+                                <label>숫자입력:&nbsp;</label><input type="number" name="volume" step="any" required style="width:20%; padding:8px;">
                             </div>
 
-                            <button type="submit" style="width:100%; padding:10px;">
-                                예측
+                            <button type="submit" class="text-bg-danger transition bg-black" style="width:10%; padding:10px;">
+                                예측하기
                             </button>
                         </form>
 
                         {% if graph_line %}
                             <h3 style="margin-top:30px;">가격 추이 (꺾은선)</h3>
-                            <img src="data:image/png;base64,{{ graph_line }}" style="width:100%;">
+                            <img src="data:image/png;base64,{{ graph_line }}" style="width:50%;">
                         {% endif %}
 
                         {% if graph_bar %}
                             <h3 style="margin-top:30px;">반입량 (막대)</h3>
-                            <img src="data:image/png;base64,{{ graph_bar }}" style="width:100%;">
+                            <img src="data:image/png;base64,{{ graph_bar }}" style="width:50%;">
                         {% endif %}
-
                     </div>
-
                 </main></center><br><br><footer class="bg-gray-900 text-gray-300 mt-auto" data-fg-bb440="30.77:76.19:/src/app/components/Footer.tsx:5:5:95:2415:e:footer:e:1" data-fgid-bb440=":r1df:" data-fg-callsite-ccit5="">
 				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-fg-bb441="30.77:76.19:/src/app/components/Footer.tsx:6:7:156:2340:e:div:ete" data-fgid-bb441=":r1dg:">
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-fg-bb442="30.77:76.19:/src/app/components/Footer.tsx:7:9:227:2095:e:div:xtetxtetxte" data-fgid-bb442=":r1dh:">

@@ -102,7 +102,7 @@ def predict():
             plt.plot(clean_df['date'], clean_df['price'])
             plt.scatter(date_input, result)  # 예측값
 
-            plt.xticks(rotation=50)
+            plt.xticks(rotation=48)
 
             img1 = io.BytesIO()
             plt.savefig(img1, format='png')
@@ -115,7 +115,7 @@ def predict():
 
             plt.bar(clean_df['date'], clean_df['volume'])
 
-            plt.xticks(rotation=50)
+            plt.xticks(rotation=48)
 
             img2 = io.BytesIO()
             plt.savefig(img2, format='png')
